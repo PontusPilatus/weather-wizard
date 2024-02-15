@@ -1,0 +1,12 @@
+.weather-container {
+  background-color: rgba(44, 62, 80, 0.7);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #f8f8f2;
+}
+
+.weather-container h2,
+.weather-container p {
+  margin: 10px 0;
+}
