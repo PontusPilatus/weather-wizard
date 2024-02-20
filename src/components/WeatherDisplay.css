@@ -1,12 +1,55 @@
-.weather-container {
-  background-color: rgba(44, 62, 80, 0.7);
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  color: #f8f8f2;
+/* Container for the entire weather display, including current weather and forecast */
+.weather-display-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  /* Adds space between the current weather and forecast */
 }
 
-.weather-container h2,
-.weather-container p {
+/* Styling for the current weather display */
+.current-weather {
+  flex-basis: 30%;
+  padding: 20px;
+  background-color: #f0f0f0;
+  /* Light background for the current weather */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Container for the forecast */
+.forecast {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  /* Space between forecast cards */
+}
+
+/* Individual forecast day styling */
+.forecast-day {
+  flex-basis: calc(70% / 5);
+  /* Divide the remaining space by 5 for each day */
+  padding: 10px;
+  background-color: #e6e6e6;
+  /* Slightly different background for contrast */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Adjustments for text sizes and margins for readability */
+.weather-display-container h2,
+.weather-display-container h3,
+.weather-display-container p {
   margin: 10px 0;
+}
+
+.weather-display-container h3 {
+  font-size: 1rem;
+}
+
+.weather-display-container p {
+  font-size: 0.9rem;
 }
