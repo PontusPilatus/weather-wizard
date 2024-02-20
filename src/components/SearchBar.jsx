@@ -2,14 +2,14 @@ function SearchBar({ onSearch, input, setInput, suggestions, setSuggestions, han
   const handleSubmit = (e) => {
     e.preventDefault();
     onSearch(input);
-    setInput(''); // Optionally clear the input upon submission
-    setSuggestions([]); // Optionally clear suggestions upon submission
+    setInput('');
+    setSuggestions([]);
   };
 
   const handleSuggestionClick = (suggestion) => {
-    setInput(suggestion); // Set input to the selected suggestion
-    onSearch(suggestion); // Optionally perform the search immediately upon selecting a suggestion
-    setSuggestions([]); // Clear suggestions after selection
+    setInput(suggestion);
+    onSearch(suggestion);
+    setSuggestions([]);
   };
 
   return (

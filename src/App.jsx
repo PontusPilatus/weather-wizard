@@ -21,8 +21,8 @@ function App() {
   };
 
   const fetchSuggestions = async (text) => {
-    const baseUrl = "https://wft-geo-db.p.rapidapi.com/v1/geo/cities"; // Corrected base URL
-    const apiKey = "077d9a6664msh3f6d74f7d0efd84p17e60bjsn82ab79d66aed"; // Your RapidAPI Key
+    const baseUrl = "https://wft-geo-db.p.rapidapi.com/v1/geo/cities";
+    const apiKey = "077d9a6664msh3f6d74f7d0efd84p17e60bjsn82ab79d66aed";
 
     try {
       const response = await fetch(`${baseUrl}?namePrefix=${text}`, {
@@ -37,11 +37,10 @@ function App() {
         throw new Error(`Error: ${response.status}`); // Throw an error if response not ok
       }
 
-      const data = await response.json(); // Parse JSON response
+      const data = await response.json();
 
-      // Assuming the API returns cities in a property, adjust based on the actual response
       if (data && data.data) {
-        return data.data.map((city) => city.name); // Map the response to get city names, adjust the mapping as per your API response
+        return data.data.map((city) => city.name);
       }
       return [];
     } catch (error) {
@@ -61,7 +60,6 @@ function App() {
       const weatherResponse = await axios.get(weatherUrl);
       setWeather(weatherResponse.data);
 
-      // Fetch 5-day forecast
       const forecastResponse = await axios.get(forecastUrl);
       setForecast(forecastResponse.data);
     } catch (error) {
@@ -81,7 +79,7 @@ function App() {
           setInput={setInput}
           suggestions={suggestions}
           setSuggestions={setSuggestions}
-          handleInputChange={handleInputChange} // Pass handleInputChange as prop
+          handleInputChange={handleInputChange}
         />
 
         <WeatherDisplay weather={weather} forecast={forecast} />
